@@ -2,6 +2,7 @@ import React from 'react';
 import 'tailwindcss/tailwind.css';
 import EquipmentStatusPieChart from './EquipmentStatusPieChart';
 import MaintenanceHoursBarChart from './MaintenanceHoursBarChart';
+import RecentMaintenanceActivities from './RecentMaintenanceActivities';
 import { Equipment } from '../interfaces/Equipment';
 import { MaintenanceRecord } from '../interfaces/MaintenanceRecord';
 
@@ -16,11 +17,9 @@ const equipmentData: Equipment[] = [
 
 // Dummy maintenance records for illustration
 const maintenanceRecords: MaintenanceRecord[] = [
-  { id: 'Preventive', equipmentId: '1', date: new Date('2023-01-05'), type: 'Preventive', technician: 'Tech A', hoursSpent: 2, description: 'Routine check', partsReplaced: [], priority: 'Low', completionStatus: 'Complete' },
-  { id: 'Repair', equipmentId: '2', date: new Date('2023-01-10'), type: 'Repair', technician: 'Tech B', hoursSpent: 3, description: 'Fixed motor', partsReplaced: ['Motor'], priority: 'High', completionStatus: 'Complete' },
-  { id: 'Emergency', equipmentId: '3', date: new Date('2023-01-15'), type: 'Emergency', technician: 'Tech C', hoursSpent: 1, description: 'Lubricated parts', partsReplaced: [], priority: 'Medium', completionStatus: 'Complete' },
-  { id: '4', equipmentId: '4', date: new Date('2023-01-20'), type: 'Maintenance', technician: 'Tech D', hoursSpent: 4, description: 'Replaced gears', partsReplaced: ['Gears'], priority: 'High', completionStatus: 'Complete' },
-
+  { id: '1', equipmentId: '1', date: new Date('2023-01-05'), type: 'Preventive', technician: 'Tech A', hoursSpent: 2, description: 'Routine check', partsReplaced: [], priority: 'Low', completionStatus: 'Complete' },
+  { id: '2', equipmentId: '2', date: new Date('2023-01-10'), type: 'Repair', technician: 'Tech B', hoursSpent: 3, description: 'Fixed motor', partsReplaced: ['Motor'], priority: 'High', completionStatus: 'Complete' },
+  { id: '3', equipmentId: '3', date: new Date('2023-01-15'), type: 'Emergency', technician: 'Tech C', hoursSpent: 1, description: 'Lubricated parts', partsReplaced: [], priority: 'Medium', completionStatus: 'Complete' },
   // Add more records as needed
 ];
 
@@ -34,7 +33,11 @@ const Dashboard: React.FC = () => {
       </div>
       <div className="mb-8">
         <h2 className="text-xl font-bold mb-2">Maintenance Hours by Department</h2>
-        <MaintenanceHoursBarChart maintenanceRecords={maintenanceRecords} equipmentData={equipmentData} />
+        <MaintenanceHoursBarChart equipmentData={equipmentData} maintenanceRecords={maintenanceRecords} />
+      </div>
+      <div className="mb-8">
+        <h2 className="text-xl font-bold mb-2">Recent Maintenance Activities</h2>
+        <RecentMaintenanceActivities maintenanceRecords={maintenanceRecords} />
       </div>
     </div>
   );
