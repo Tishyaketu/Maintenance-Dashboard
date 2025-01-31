@@ -77,7 +77,6 @@ const MaintenanceRecordsTable: React.FC = () => {
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
   });
-
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSortByEquipment(event.target.checked);
     if (event.target.checked) {
