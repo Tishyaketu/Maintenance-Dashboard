@@ -20,6 +20,7 @@ const maintenanceRecords: MaintenanceRecord[] = [
   { id: '1', equipmentId: '1', date: new Date('2023-01-05'), type: 'Preventive', technician: 'Tech A', hoursSpent: 2, description: 'Routine check', partsReplaced: [], priority: 'Low', completionStatus: 'Complete' },
   { id: '2', equipmentId: '2', date: new Date('2023-01-10'), type: 'Repair', technician: 'Tech B', hoursSpent: 3, description: 'Fixed motor', partsReplaced: ['Motor'], priority: 'High', completionStatus: 'Complete' },
   { id: '3', equipmentId: '3', date: new Date('2023-01-15'), type: 'Emergency', technician: 'Tech C', hoursSpent: 1, description: 'Lubricated parts', partsReplaced: [], priority: 'Medium', completionStatus: 'Complete' },
+  { id: '4', equipmentId: '4', date: new Date('2023-01-20'), type: 'Preventive', technician: 'Tech D', hoursSpent: 4, description: 'Replaced gears', partsReplaced: ['Gears'], priority: 'High', completionStatus: 'Complete' },
   // Add more records as needed
 ];
 
